@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="разностное отношение, приращение, непрерывность">
+  <meta name="theme-color" content="#fff">
+  <title>Производная и дифференцируемость · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="32">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=derivatives#program">Дифференцирование</a></nav>
+      <p class="kicker dot">Вопрос 32 из 42</p>
+      <div class="lesson-title"><h1>Производная и дифференцируемость<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">f′</span></div>
+      <p class="lesson-keywords">разностное отношение, приращение, непрерывность</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения</h2>
+  <p>Пусть a — внутренняя точка области. Производная f′(a) — конечный предел [f(a+h)−f(a)]/h при h→0, h≠0. Дифференцируемость означает возможность записать f(a+h)−f(a)=Ah+o(h). Число A единственно и совпадает с f′(a). На концах отрезка можно отдельно определить соответствующие односторонние производные.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Эквивалентность и непрерывность</h2>
+  <p>Если разностное отношение стремится к A, то f(a+h)−f(a)−Ah после деления на h стремится к нулю. В обратную сторону деление разложения на h даёт A+o(1). Дифференцируемость влечёт непрерывность, потому что Ah+o(h)→0. Обращение неверно: для |x| в нуле разностное отношение равно −1 слева и 1 справа.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>При сильном увеличении около точки дифференцируемый график имеет линейную модель. Непрерывность гарантирует лишь малое приращение, которое может затухать медленнее, чем h.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Производная корня по определению</h2>
+  <p>При a&gt;0 разностное отношение для √x равно [√(a+h)−√a]/h=1/[√(a+h)+√a]→1/(2√a). В 0 правое отношение равно 1/√h и стремится к +∞. Односторонняя производная конечного значения там отсутствует.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Зависимость от порядка малости</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Докажи непрерывность f(x)=|x|ᵅ в 0 при α&gt;0.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>f(0)=0, и |f(x)|=|x|ᵅ→0.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> При каких α существует конечная производная в 0?</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Отношение равно sign(h)·|h|<sup>α−1</sup>. При α&gt;1 предел 0, при α=1 получаем −1 и 1, при 0&lt;α&lt;1 модули расходятся со знаками по сторонам.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Дифференцируемость без непрерывной производной</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди f′(0) для f(x)=x²sin(1/x) при x≠0 и f(0)=0.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Отношение f(h)/h=h sin(1/h)→0.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Исследуй непрерывность f′ в нуле.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>При x≠0 имеем f′(x)=2x sin(1/x)−cos(1/x). Первая часть →0. По последовательностям 1/(2πn) и 1/((2n+1)π) производная принимает значения −1 и 1, значит разрывна.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-31.html"><span aria-hidden="true">←</span> Вопрос 31</a><a href="topic-33.html">Вопрос 33 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

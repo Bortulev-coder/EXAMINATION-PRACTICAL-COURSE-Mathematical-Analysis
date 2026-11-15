@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ε–N, арифметика, теорема о сжатой последовательности">
+  <meta name="theme-color" content="#fff">
+  <title>Предел последовательности и его свойства · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="10">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=sequences#program">Последовательности</a></nav>
+      <p class="kicker dot">Вопрос 10 из 42</p>
+      <div class="lesson-title"><h1>Предел последовательности и его свойства<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">aₙ</span></div>
+      <p class="lesson-keywords">ε–N, арифметика, теорема о сжатой последовательности</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определение и основные утверждения</h2>
+  <p>xₙ→a, если ∀ε&gt;0 ∃N ∀n≥N: |xₙ−a|&lt;ε. Сходящаяся последовательность ограничена: хвост помещается в (a−1,a+1), начальная часть конечна. Предел единственен: две различные точки нельзя одновременно приблизить ближе трети расстояния между ними.</p>
+<p>Для xₙ→a, yₙ→b имеем предел суммы a+b, произведения ab и частного a/b при b≠0. Неравенство xₙ≤yₙ на хвосте даёт a≤b. Если uₙ≤xₙ≤vₙ и uₙ,vₙ→a, то xₙ→a.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательства правил</h2>
+  <p>Для суммы берём ε/2 для каждого слагаемого, затем максимум двух порогов. Для произведения используем xₙyₙ−ab=xₙ(yₙ−b)+b(xₙ−a). Ограниченность |xₙ|≤M позволяет сделать обе части сколь угодно малыми. При b≠0 на хвосте |yₙ|≥|b|/2, так что |1/yₙ−1/b|≤2|yₙ−b|/|b|². Частное сводится к произведению.</p>
+<p>Если a&gt;b, ε=(a−b)/3 даёт xₙ&gt;a−ε&gt;b+ε&gt;yₙ на хвосте, противоречие. При сжатии для того же достаточно большого n выполняется a−ε&lt;uₙ≤xₙ≤vₙ&lt;a+ε.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>При сжатии два подвижных барьера подходят к одному месту и заставляют зажатую последовательность оказаться в любом заданном коридоре.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Явный выбор N</h2>
+  <p>Для xₙ=(7n+1)/(3n−2) получаем |xₙ−7/3|=17/[3(3n−2)]≤17/(3n) при n≥1. Достаточно N=⌊17/(3ε)⌋+1.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Сжатие и арифметика</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Докажи по определению, что (−1)ⁿ/n→0, явно выбрав N.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Модуль равен 1/n. Берём N=⌊1/ε⌋+1, тогда при n≥N имеем 1/n&lt;ε.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Вычисли предел (3+(−1)ⁿ/n)/(2−1/n).</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Числитель стремится к 3, знаменатель к 2≠0. По правилу частного предел 3/2.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Осторожно со строгим знаком</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Для xₙ=1−2/n и yₙ=1+1/n проверь xₙ&lt;yₙ и сравни пределы.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>yₙ−xₙ=3/n&gt;0, но оба предела равны 1.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди lim n(yₙ−xₙ) и объясни, почему нельзя просто перемножить пределы.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Произведение равно 3 при всех n. Последовательность n не имеет конечного предела, поэтому теорема о произведении двух конечных пределов неприменима.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-09.html"><span aria-hidden="true">←</span> Вопрос 09</a><a href="topic-11.html">Вопрос 11 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

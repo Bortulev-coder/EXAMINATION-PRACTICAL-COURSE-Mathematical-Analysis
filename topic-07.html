@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="наименьший элемент, индуктивное множество">
+  <meta name="theme-color" content="#fff">
+  <title>Натуральные числа, индукция и принцип Архимеда · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="7">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=foundations#program">Основы анализа</a></nav>
+      <p class="kicker dot">Вопрос 07 из 42</p>
+      <div class="lesson-title"><h1>Натуральные числа, индукция и принцип Архимеда<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">∈</span></div>
+      <p class="lesson-keywords">наименьший элемент, индуктивное множество</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения</h2>
+  <p>Здесь ℕ начинается с 1. Множество индуктивно, если содержит 1 и вместе с n содержит n+1 (для подмножеств ℝ правило применяется к каждому элементу). ℕ — пересечение всех таких множеств. Проверив базу P(1) и переход P(n)⇒P(n+1), получаем P(n) для всех n∈ℕ по определению. В сильной индукции для следующего шага можно использовать все уже пройденные случаи.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Упорядоченность и Архимед</h2>
+  <p>Индукцией по n доказываем, что всякое непустое подмножество {1,…,n} имеет минимум: если пересечение с {1,…,n−1} непусто, берём его минимум, иначе остаётся n. Для произвольного непустого A⊂ℕ выберем n∈A и применим результат к A∩{1,…,n}. Все оставшиеся элементы больше n. Сильная индукция следует отсюда: у множества контрпримеров был бы наименьший элемент.</p>
+<p>Если ℕ ограничено сверху, s=sup ℕ. Из точности s есть n&gt;s−1, но n+1∈ℕ и n+1&gt;s. Поэтому для любого x∈ℝ найдётся n&gt;x, а для a&gt;0 и b∈ℝ найдётся n с na&gt;b.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Индукция напоминает лестницу: база позволяет взойти на первую ступень, переход даёт возможность подняться на следующую. Архимедовость гарантирует, что одинаковыми положительными шагами можно подняться выше любой заданной высоты.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Неравенство Бернулли</h2>
+  <p>При t≥−1 имеем (1+t)ⁿ≥1+nt. База n=1. Умножаем утверждение для n на 1+t≥0: (1+t)ⁿ⁺¹≥1+(n+1)t+nt²≥1+(n+1)t.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> От индукции к оценке</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Докажи 2ⁿ≥n+1 для всех n≥1.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>При n=1 равенство. Если 2ⁿ≥n+1, то 2ⁿ⁺¹≥2n+2≥n+2.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Для a&gt;0 объясни, почему 2ⁿa&gt;100 при некотором n.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Выбираем n&gt;100/a по Архимеду. Тогда 2ⁿa≥(n+1)a&gt;100.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Минимальный контрпример</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Обоснуй разложение любого n≥2 в произведение простых чисел.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Если есть контрпример, берём минимальный. Он составной и равен ab с 2≤a,b&lt;n. Оба множителя разлагаются по минимальности n, значит и n разлагается.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Тем же приёмом докажи, что любое натуральное число равно 2ᵏm с нечётным m.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Минимальный контрпример обязан быть чётным. Для n/2 уже есть представление 2ᵏm, значит n=2ᵏ⁺¹m. Противоречие.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-06.html"><span aria-hidden="true">←</span> Вопрос 06</a><a href="topic-08.html">Вопрос 08 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

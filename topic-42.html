@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="F(x,y)=0, производная по параметру, вертикальная касательная">
+  <meta name="theme-color" content="#fff">
+  <title>Неявные и параметрические функции · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="42">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=derivatives#program">Дифференцирование</a></nav>
+      <p class="kicker dot">Вопрос 42 из 42</p>
+      <div class="lesson-title"><h1>Неявные и параметрические функции<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">f′</span></div>
+      <p class="lesson-keywords">F(x,y)=0, производная по параметру, вертикальная касательная</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения и формулы</h2>
+  <p>Если F(x₀,y₀)=0, F имеет непрерывные частные производные около точки и F_y(x₀,y₀)≠0, то в достаточно малой окрестности уравнение единственным образом задаёт дифференцируемую ветвь y(x) с y(x₀)=y₀. Её производная y′=−F_x/F_y. При параметризации x=x(t), y=y(t) с гладкими координатами и x′(t₀)≠0 локально имеем dy/dx=y′(t)/x′(t). При достаточной гладкости d²y/dx²=(y″x′−y′x″)/(x′)³. При x′=0, y′≠0 касательная вертикальна. Если обе производные нулевые, требуются секущие или члены более высокого порядка.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Обоснование</h2>
+  <p>Умножив F при необходимости на −1, сузим прямоугольник так, чтобы F_y≥m&gt;0. При x=x₀ значения F на верхнем и нижнем краю имеют разные знаки по Лагранжу. По непрерывности это остаётся верным при x рядом. По промежуточному значению есть корень, по строгому росту по y он единственен. Для непрерывности ветви повторяем проверку знаков на малом отрезке вокруг текущего корня. Поочерёдно меняя x и y между двумя соседними корнями и дважды применяя Лагранжа, получаем 0=F_x(ξ,y(x+h))h+F_y(x,η)Δy, где ξ между x и x+h, а η между y(x) и y(x+h). Делим на h и переходим к пределу с учётом непрерывности ветви и частных производных.</p>
+<p>Для параметрической кривой обращаем x(t) локально, поскольку x′ непрерывна и не равна нулю. Производная композиции даёт y′/x′. Дифференцируя это частное по t и ещё раз деля на x′, получаем вторую производную. Если x′=0, y′≠0, меняем роли координат и получаем dx/dy=0.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>В неявном уравнении два изменения должны компенсироваться, чтобы F осталось нулём. В параметризации сравниваются скорости движения по двум координатам.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Одна окружность, разные локальные ветви</h2>
+  <p>x²+y²=4. При y≠0 имеем y′=−x/y, а y″=−4/y³. В точках (±2,0) формула y′ недоступна, но F_x≠0, поэтому выражаем x через y и получаем dx/dy=0, то есть вертикальную касательную.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Неявная ветвь и её кривизна</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди наклон в (1,1) кривой x²+xy+y²=3 и проверь существование локальной ветви.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>F_y=x+2y=3 в точке, условия выполняются. y′=−(2x+y)/(x+2y), в (1,1) это −1.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди y″ в этой точке.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Дифференцируем 2x+y+(x+2y)y′=0. Получаем 2+2y′+2(y′)²+(x+2y)y″=0. Подстановка даёт y″=−2/3.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Параметр и вырожденная скорость</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Для x=t², y=t³ вычисли dy/dx и d²y/dx² при t≠0.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>dy/dx=3t²/(2t)=3t/2. Производная по t равна 3/2, после деления на 2t получаем 3/(4t).</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Определи касательную при t=0, учитывая, что обе скорости равны нулю.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Секущая из начала имеет наклон t³/t²=t→0. Касательная горизонтальна, y=0. Для каждого малого x&gt;0 имеются две ветви y=±x<sup>3/2</sup>, поэтому возле начала вся кривая не является графиком одной функции y(x).</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-41.html"><span aria-hidden="true">←</span> Вопрос 41</a><a href="index.html#program">К программе <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

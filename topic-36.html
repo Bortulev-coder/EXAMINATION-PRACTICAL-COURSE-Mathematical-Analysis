@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="секущая, наклон, вертикальная касательная">
+  <meta name="theme-color" content="#fff">
+  <title>Касательная и угол между графиками · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="36">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=derivatives#program">Дифференцирование</a></nav>
+      <p class="kicker dot">Вопрос 36 из 42</p>
+      <div class="lesson-title"><h1>Касательная и угол между графиками<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">f′</span></div>
+      <p class="lesson-keywords">секущая, наклон, вертикальная касательная</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Формулы</h2>
+  <p>При конечной производной касательная к графику в (a,f(a)) имеет уравнение y=f(a)+f′(a)(x−a). Для двух графиков с конечными производными m₁,m₂ меньший угол θ∈[0,π/2] удовлетворяет tan θ=|(m₂−m₁)/(1+m₁m₂)|, если знаменатель ненулевой. При 1+m₁m₂=0 касательные перпендикулярны. Для вертикальной касательной пользуемся направляющим вектором (0,1).</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Вывод</h2>
+  <p>Секущая через (a,f(a)) и (a+h,f(a+h)) имеет наклон Δf/h. При его конечном пределе получаем указанную прямую. Если модуль наклона стремится к ∞, направления неориентированных секущих стремятся к вертикальной прямой. Для векторов v₁=(1,m₁), v₂=(1,m₂) модуль определителя равен |m₂−m₁|, модуль скалярного произведения |1+m₁m₂|. Отношение даёт тангенс меньшего угла.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Закрепи один конец секущей в точке и сдвигай второй к ней по графику. Предельное направление секущей определяет касательную.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Вертикальная касательная</h2>
+  <p>Для y=∛x в 0 наклон секущей h<sup>1/3</sup>/h=1/|h|<sup>2/3</sup>→+∞. Предельная прямая x=0 существует, хотя конечной производной нет.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Пересечение параболы и прямой</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди касательные к y=x² и y=3x−2 в их точке пересечения с x=1.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Общая точка (1,1). Наклон параболы 2, касательная y=1+2(x−1). У прямой наклон 3 и касательная совпадает с исходной прямой.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди меньший угол пересечения.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>tan θ=|3−2|/(1+6)=1/7, значит θ=arctan(1/7).</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Касание в заданной точке</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди прямую, касающуюся y=ln x при x=1.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Точка (1,0), производная 1. Прямая y=x−1.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Проверь, есть ли другие общие точки у этой прямой и логарифма.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Для F(x)=x−1−ln x производная 1−1/x отрицательна при x&lt;1 и положительна при x&gt;1. Единственный минимум F(1)=0, поэтому других общих точек нет.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-35.html"><span aria-hidden="true">←</span> Вопрос 35</a><a href="topic-37.html">Вопрос 37 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="супремум, инфимум, максимум, минимум">
+  <meta name="theme-color" content="#fff">
+  <title>Точные грани и вложенные отрезки · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="6">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=foundations#program">Основы анализа</a></nav>
+      <p class="kicker dot">Вопрос 06 из 42</p>
+      <div class="lesson-title"><h1>Точные грани и вложенные отрезки<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">∈</span></div>
+      <p class="lesson-keywords">супремум, инфимум, максимум, минимум</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения</h2>
+  <p>Верхняя грань M удовлетворяет a≤M для всех a∈A. Супремум s — наименьшая верхняя грань. Эквивалентно: s ограничивает A сверху и для каждого ε&gt;0 найдётся a∈A с s−ε&lt;a. Нижние грани и инфимум определяются двойственно. Максимум равен sup A, если sup A∈A. Минимум равен inf A, если inf A∈A.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Существование и единственность</h2>
+  <p>При наличии двух максимумов m,m′ имеем m≤m′ и m′≤m, так что они равны. Аналогично с минимумами и точными гранями. Для непустого ограниченного сверху A возьмём B — множество всех его верхних граней. Полнота даёт s между A и B. Тогда s — верхняя грань A, причём s≤b для любого b∈B. Значит s=sup A. Инфимум находится как −sup(−A).</p>
+<p>Если отрезки [aₙ,bₙ] вложены, каждое bₘ ограничивает все aₙ сверху: это следует из вложенности отдельно при n≤m и n≥m. Поэтому s=sup{aₙ} лежит в каждом отрезке. Если bₙ−aₙ→0, любые две общие точки отстоят не более чем на bₙ−aₙ при всех n, значит совпадают.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Двигай потолок над множеством вниз до упора. Потолок может касаться последней точки, а может оставаться границей, к которой точки подходят всё ближе.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Грань может не принадлежать множеству</h2>
+  <p>A={2−1/n : n≥1}. Минимум равен 1, потому что 1/n≤1 и n=1 допустимо. Верхняя грань 2 точна: при n&gt;1/ε имеем 2−1/n&gt;2−ε. Значение 2 не достигается.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Грани с раскрытием параметра</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди inf и sup A={(3n+1)/(n+2) : n≥1}.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Дробь равна 3−5/(n+2). Минимум достигается при n=1 и равен 4/3. Супремум равен 3: для ε&gt;0 можно взять n+2&gt;5/ε.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди inf и sup множества {2−4x : x∈A} и выясни, какие из них достигаются.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Убывающая аффинная функция меняет роли граней. Инфимум 2−4·3=−10 не достигается, супремум 2−4·4/3=−10/3 достигается.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Проверка гипотез вложенности</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди пересечение Iₙ=[1−1/n,1+2/n].</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Последовательность левый концов возрастает к 1, правая убывает к 1. Отрезки вложены и сжимаются, их общая точка 1.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Замени Iₙ на открытые (1,1+2/n). Что получится?</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Любая общая точка должна быть больше 1, но для x&gt;1 выбираем n&gt;2/(x−1) и x выпадает. Пересечение пусто.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-05.html"><span aria-hidden="true">←</span> Вопрос 05</a><a href="topic-07.html">Вопрос 07 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

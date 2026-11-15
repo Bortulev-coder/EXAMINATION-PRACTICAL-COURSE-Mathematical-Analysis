@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="хвосты, проколотая окрестность, односторонние базы">
+  <meta name="theme-color" content="#fff">
+  <title>База и предел по базе · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="28">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=continuity#program">Непрерывность</a></nav>
+      <p class="kicker dot">Вопрос 28 из 42</p>
+      <div class="lesson-title"><h1>База и предел по базе<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">ε</span></div>
+      <p class="lesson-keywords">хвосты, проколотая окрестность, односторонние базы</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения</h2>
+  <p>База на X — непустое семейство непустых подмножеств X, где для любых B₁,B₂ из базы найдётся B₃ из базы с B₃⊂B₁∩B₂. Если f:X→ℝ, то lim f=L по базе означает, что для каждого ε&gt;0 найдётся B из базы, на котором |f(x)−L|&lt;ε.</p>
+<p>На вещественной области D примеры: D∩{0&lt;|x−a|&lt;δ}, D∩(a,a+δ), D∩(a−δ,a), D∩(R,+∞) и D∩(−∞,−R), при наличии нужной предельной точки или неограниченности в нужную сторону. Для ℕ база хвостов {n≥N} даёт предел последовательности.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Единственность и сравнение баз</h2>
+  <p>Если L₁≠L₂, выбираем ε&lt;|L₁−L₂|/2. База даёт непустой элемент внутри пересечения двух множеств, где одновременно выполнены взаимоисключающие оценки. Это доказывает единственность. Две базы эквивалентны, если каждый элемент каждой базы содержит элемент другой. Тогда любое условие |f−L|&lt;ε переносится с найденного множества на более узкое из другой базы, в обе стороны.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>База задаёт направление приближения через набор всё более точных требований. Условие пересечения гарантирует, что любые два требования можно выполнить одновременно.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Семейство, которое не является базой</h2>
+  <p>Окрестности справа и слева от a по отдельности образуют базы. Если просто объединить эти семейства, получим два непустых множества с пустым пересечением. Двусторонняя база использует объединение левой и правой части внутри каждого элемента базы.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Эквивалентность баз</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Обоснуй, что Bₙ=(0,1/n), n≥1, образуют базу на ℝ.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Все множества непусты, B<sub>max(n,m)</sub> содержится в пересечении Bₙ и Bₘ.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Сравни её с семейством (0,δ) при δ&gt;0.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Каждое Bₙ уже входит во второе семейство. Для каждого δ выбираем n&gt;1/δ, тогда Bₙ⊂(0,δ). Базы эквивалентны.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> База выделяет часть колебаний</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> На ℕ проверь условие базы для E_N={2n : n≥N}.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>E_N непусты. В пересечении E_N и E_M лежит E<sub>max(N,M)</sub>.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди предел (−1)ᵏ+1/k по E и по обычным хвостам.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>На E_N значения 1+1/(2n), предел 1. По хвостам ℕ нечётные индексы дают −1, а чётные 1, поэтому предела нет.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-27.html"><span aria-hidden="true">←</span> Вопрос 27</a><a href="topic-29.html">Вопрос 29 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

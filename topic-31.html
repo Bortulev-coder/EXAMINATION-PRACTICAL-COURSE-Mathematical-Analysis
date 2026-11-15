@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="малое o, большое O, главный член">
+  <meta name="theme-color" content="#fff">
+  <title>Бесконечно малые и O-символика · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="31">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=continuity#program">Непрерывность</a></nav>
+      <p class="kicker dot">Вопрос 31 из 42</p>
+      <div class="lesson-title"><h1>Бесконечно малые и O-символика<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">ε</span></div>
+      <p class="lesson-keywords">малое o, большое O, главный член</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения и правила</h2>
+  <p>При x→a запись f=O(g) означает |f(x)|≤C|g(x)| в некоторой проколотой окрестности. Запись f=o(g) означает f/g→0, если g не обращается в ноль там, где сравниваем. Эквивалентность f∼g равносильна f=g+o(g). Например x³=o(x²), а x²=O(x²), но x² не является o(x²).</p>
+<p>Остатки можно комбинировать: O(g)·O(h)=O(gh), o(g)·O(h)=o(gh), o(g)+o(g)=o(g). Утверждение f=g+h+O(r) позволяет вычесть g и сохранить меньшие члены. Символ O обозначает оценку, а равенство с ним не всегда можно читать в обратную сторону.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Почему операции работают</h2>
+  <p>Если |f|≤C|g| и |u|≤K|h|, то |fu|≤CK|gh|. Если f/g→0, то |fu/(gh)|≤K|f/g|→0. Для суммы двух o(g) делим на g и складываем два нулевых предела. Из f/g→1 сразу (f−g)/g→0.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>O(g) говорит, что вклад помещается внутри конверта размера C|g|. o(g) требует, чтобы вклад со временем помещался в конверт сколь угодно меньшей относительной ширины.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Точная алгебра вместо Тейлора</h2>
+  <p>1/(1−x)=1+x+x²+x³/(1−x)=1+x+x²+O(x³) при x→0, потому что 1/(1−x) локально ограничена. После вычитания 1+x и деления на x² получается 1+O(x)→1.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Сохранить следующий порядок</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Выведи 1/(1+x)=1−x+x²−x³+O(x⁴).</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Если умножить 1−x+x²−x³ на 1+x, получится 1−x⁴. Остаток x⁴/(1+x)=O(x⁴).</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди lim<sub>x→0</sub>[1/(1+x)−1+x−x²]/x³.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>После сокращения из предыдущей формулы остаётся −1+O(x), предел −1.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Осциллирующий остаток</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Классифицируй x²sin(1/x) относительно x и x².</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Это o(x), так как |x sin(1/x)|≤|x|, и O(x²), так как |sin(1/x)|≤1. Однако это не o(x²): отношение sin(1/x) не стремится к 0.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Докажи x+x²sin(1/x)∼x. Поможет ли это найти предел [f(x)−x]/x²?</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Деление на x даёт 1+x sin(1/x)→1. Но после вычитания главного члена и деления на x² остаётся sin(1/x), предел отсутствует.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-30.html"><span aria-hidden="true">←</span> Вопрос 30</a><a href="topic-32.html">Вопрос 32 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

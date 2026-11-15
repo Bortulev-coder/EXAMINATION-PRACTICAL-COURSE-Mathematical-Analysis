@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="монотонность, ограниченность, инвариантный промежуток">
+  <meta name="theme-color" content="#fff">
+  <title>Последовательности и рекурсии · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="9">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=sequences#program">Последовательности</a></nav>
+      <p class="kicker dot">Вопрос 09 из 42</p>
+      <div class="lesson-title"><h1>Последовательности и рекурсии<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">aₙ</span></div>
+      <p class="lesson-keywords">монотонность, ограниченность, инвариантный промежуток</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения</h2>
+  <p>Числовая последовательность — отображение ℕ→ℝ. Она не убывает при xₙ₊₁≥xₙ, не возрастает при xₙ₊₁≤xₙ. Строгая монотонность требует строгих знаков. Ограниченность эквивалентна существованию M с |xₙ|≤M для всех n.</p>
+<p>Рекурсия xₙ₊₁=F(xₙ) задаёт последовательность вместе с начальным значением, если все итерации определены. Если F(I)⊂I и x₁∈I, промежуток I инвариантен, то есть все xₙ∈I.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Как доказывать монотонность</h2>
+  <p>Из F(I)⊂I принадлежность каждого члена I следует индукцией. Если F не убывает на I и x₂≥x₁, то xₙ₊₁≥xₙ влечёт F(xₙ₊₁)≥F(xₙ), то есть xₙ₊₂≥xₙ₊₁. При x₂≤x₁ рассуждение зеркально. Без монотонности F знак первого шага может не сохраниться.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Рекурсия многократно пропускает число через одну и ту же функцию. Инвариантный промежуток задаёт коридор, внутри которого останутся все выходы.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Доказать ограниченность до вычисления предела</h2>
+  <p>x₁=0, xₙ₊₁=√(2+xₙ). Для 0≤x≤2 получаем √2≤F(x)≤2, значит [0,2] инвариантен. F возрастает и x₂&gt;x₁, следовательно xₙ строго возрастает. Теперь теорема о монотонной последовательности даёт существование предела, а уравнение L=√(2+L) оставляет L=2.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Фиксированная точка и направление</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> При x₁=5, xₙ₊₁=(xₙ+3)/2 докажи, что все члены лежат в [3,5].</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Если x∈[3,5], то F(x)∈[3,4]⊂[3,5]. Начальный член в промежутке, поэтому применима индукция.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Докажи монотонность и найди xₙ явно.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>F(x)−x=(3−x)/2≤0. Из xₙ₊₁−3=(xₙ−3)/2 получаем xₙ=3+2·2<sup>−(n−1)</sup>, значит убывание строгое.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Неудачный перенос первого шага</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Для y₁=0, yₙ₊₁=1−yₙ найди инвариантный отрезок.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>При y∈[0,1] отображение 1−y снова попадает в [0,1].</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Опиши все члены и объясни, почему монотонности нет.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>После 0 идёт 1, после 1 идёт 0. Поэтому y₂ₖ=1, y₂ₖ₋₁=0. Отображение убывает, и знак разности соседних членов чередуется.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-08.html"><span aria-hidden="true">←</span> Вопрос 08</a><a href="topic-10.html">Вопрос 10 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

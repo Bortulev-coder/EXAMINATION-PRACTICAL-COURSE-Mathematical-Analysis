@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="знак производной, критические точки">
+  <meta name="theme-color" content="#fff">
+  <title>Монотонность и достаточные условия экстремума · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="38">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=derivatives#program">Дифференцирование</a></nav>
+      <p class="kicker dot">Вопрос 38 из 42</p>
+      <div class="lesson-title"><h1>Монотонность и достаточные условия экстремума<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">f′</span></div>
+      <p class="lesson-keywords">знак производной, критические точки</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Критерии</h2>
+  <p>Для дифференцируемой на интервале f неубывание равносильно f′≥0 всюду, невозрастание равносильно f′≤0. Строгий знак достаточен для строгой монотонности. При f′≥0 строгий рост равносилен отсутствию непустых открытых подынтервалов, где f′≡0. Достаточное условие локального минимума: f непрерывна в c и f′ меняет знак с − на + при проходе через c. Для максимума знаки + и −.</p>
+<p>Если f′(c)=0 и существует f″(c)&gt;0, имеем строгий локальный минимум. При f″(c)&lt;0 получаем максимум. При f″(c)=0 тест не определяет ответа. Для исследования глобальных экстремумов на отрезке проверяют также концы и точки без производной.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательства</h2>
+  <p>У неубывающей функции Δf/h≥0 по обе стороны, поэтому f′≥0. В обратную сторону f(b)−f(a)=f′(ξ)(b−a)≥0. Если у неубывающей функции два одинаковых значения, весь промежуток между ними постоянен. Постоянство равносильно f′≡0 там по Лагранжу. Знак на обеих сторонах c даёт нужное направление монотонности на каждом отрезке до c. Если f′(c)=0 и f″(c)&gt;0, из f′(c+h)/h→f″(c) следует смена знака с − на +.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Читай таблицу знаков производной как указание, куда идёт график. Стационарная точка обозначает горизонтальное направление и сама по себе ещё не определяет разворот.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Критические точки и сравнение</h2>
+  <p>Для f=x³−3x имеем f′=3(x−1)(x+1). Знаки +,−,+. В x=−1 локальный максимум 2, в x=1 минимум −2. На [−2,2] значения −2 и 2 достигаются также на концах, потому что f(−2)=−2 и f(2)=2.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Кратный нуль производной</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Исследуй монотонность f(x)=x⁴−4x³.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>f′=4x²(x−3). Производная отрицательна при x&lt;3 кроме 0, положительна при x&gt;3. Функция строго убывает до 3 и растёт после 3.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди и классифицируй все стационарные точки.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>x=0 и x=3. В 0 экстремума нет, поскольку знак не меняется. В 3 минимум, f(3)=−27.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Нулевая вторая производная</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Сравни x⁴ и −x⁴ в 0 по их первым двум производным.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>У обеих f′(0)=f″(0)=0. Тест по второй производной ответа не даёт.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Классифицируй их экстремумы и приведи третий пример с теми же производными, но без экстремума.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>x⁴≥0 — строгий минимум, −x⁴≤0 — строгий максимум. У x³ в нуле обе производные равны нулю, но значения имеют разные знаки по сторонам, поэтому экстремума нет.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-37.html"><span aria-hidden="true">←</span> Вопрос 37</a><a href="topic-39.html">Вопрос 39 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

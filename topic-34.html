@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="произведение, частное, цепное правило, обратная функция">
+  <meta name="theme-color" content="#fff">
+  <title>Правила дифференцирования · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="34">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=derivatives#program">Дифференцирование</a></nav>
+      <p class="kicker dot">Вопрос 34 из 42</p>
+      <div class="lesson-title"><h1>Правила дифференцирования<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">f′</span></div>
+      <p class="lesson-keywords">произведение, частное, цепное правило, обратная функция</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Формулы</h2>
+  <p>(f±g)′=f′±g′, (fg)′=f′g+fg′, (f/g)′=(f′g−fg′)/g² при g≠0. Для дифференцируемых g в a и f в g(a) имеем (f∘g)′(a)=f′(g(a))g′(a). Если f непрерывна и строго монотонна на интервале, дифференцируема в a и f′(a)≠0, то (f⁻¹)′(f(a))=1/f′(a).</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательства</h2>
+  <p>Сумма получается сложением разностных отношений. Приращение произведения равно f(a)Δg+g(a)Δf+ΔfΔg. Последнее слагаемое есть o(h) при Δf,Δg=O(h). Для частного пишем Δ(1/g)=−Δg/[g(a+h)g(a)] и используем непрерывность g.</p>
+<p>Для композиции подставляем Δg=g′(a)h+o(h) в Δf=f′(g(a))Δg+o(Δg). Остаток равен η(Δg)Δg, где η(t)→0 и η(0)=0, следовательно он o(h) даже в точках Δg=0. Для обратной функции обозначим y=f(x), b=f(a). По непрерывности обратной x→a при y→b. Тогда [f⁻¹(y)−a]/(y−b)=(x−a)/(f(x)−f(a))→1/f′(a).</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>В композиции внешний коэффициент переводит приращение промежуточной величины в выходное, поэтому два коэффициента масштабирования перемножаются.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Переменная степень</h2>
+  <p>При x&gt;0, y=xˣ=e<sup>x ln x</sup>. (x ln x)′=ln x+1, откуда y′=xˣ(ln x+1). При таком показателе обычное правило (xᵅ)′ для постоянного α применять нельзя.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Цепное правило и частное</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди производную u(x)=ln(1+x²).</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>u′=2x/(1+x²). Аргумент логарифма положителен при любом x.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди производную u(x)/x и её предел в 0.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>При x≠0 производная [2x²/(1+x²)−ln(1+x²)]/x²=2/(1+x²)−ln(1+x²)/x²→2−1=1.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Обратная производная в численной точке</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди f′(1) для f(x)=x+x³ и проверь применимость формулы обратной.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>f′(1)=4. f′=1+3x²&gt;0, при этом f непрерывна, строго возрастает и f(1)=2.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди производную arctan(f⁻¹(y)) при y=2.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>(f⁻¹)′(2)=1/4, производная arctan в 1 равна 1/2. По цепному правилу получаем 1/8.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-33.html"><span aria-hidden="true">←</span> Вопрос 33</a><a href="topic-35.html">Вопрос 35 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

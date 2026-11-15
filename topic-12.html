@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Бернулли, геометрическая сумма, n/qⁿ">
+  <meta name="theme-color" content="#fff">
+  <title>Геометрическая прогрессия и рост qⁿ · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="12">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=sequences#program">Последовательности</a></nav>
+      <p class="kicker dot">Вопрос 12 из 42</p>
+      <div class="lesson-title"><h1>Геометрическая прогрессия и рост qⁿ<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">aₙ</span></div>
+      <p class="lesson-keywords">Бернулли, геометрическая сумма, n/qⁿ</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Основные факты</h2>
+  <p>При q&gt;1 последовательность qⁿ растёт к +∞. Для всякого x≥1 существует единственное n≥1 с qⁿ⁻¹≤x&lt;qⁿ. Если |q|&lt;1, то qⁿ→0, а 1+q+…+qⁿ=(1−qⁿ⁺¹)/(1−q)→1/(1−q). При q&gt;1 также n/qⁿ→0.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательства</h2>
+  <p>Пишем q=1+t, t&gt;0, и применяем Бернулли: qⁿ≥1+nt. Для x≥1 берём минимальное n с qⁿ&gt;x. Если n&gt;1, предыдущая степень не превосходит x, а для n=1 нижняя граница равна 1. При 0&lt;|q|&lt;1 используем обратную растущую прогрессию. Формула суммы следует вычитанием qSₙ из Sₙ.</p>
+<p>Для aₙ=n/qⁿ отношение aₙ₊₁/aₙ=(1+1/n)/q стремится к 1/q&lt;1. Выбираем ρ между 1/q и 1. После некоторого N каждый шаг умножает aₙ не более чем на ρ, поэтому aₙ≤a_Nρⁿ⁻ᴺ→0.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Для сравнения темпов роста следи за множителем одного шага. Даже небольшое систематическое преимущество на каждом шаге накапливается геометрически.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Периодическая дробь как геометрическая сумма</h2>
+  <p>0.272727…=27/100+27/100²+…=(27/100)/(1−1/100)=3/11. Частичная сумма по первым m блокам отличается от результата на (3/11)·100⁻ᵐ.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Сумма со сменой знаков</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди предел 3−1+1/3−1/9+… по частичным суммам.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Это прогрессия с первым членом 3 и q=−1/3, сумма 3/(1+1/3)=9/4.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди остаток после m членов и скажи, с какой стороны приближают чётные m.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>S−S_m=(9/4)(−1/3)ᵐ. При чётных m остаток положителен, значит S_m ниже предела.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Темп роста и степенные пороги</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Для q=3/2 найди n, при котором qⁿ⁻¹≤5&lt;qⁿ.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>q³=27/8&lt;5, q⁴=81/16&gt;5, значит n=4.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Докажи, что n²/(3/2)ⁿ→0 тем же методом, что и n/qⁿ.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Отношение соседних членов (1+1/n)²/(3/2)→2/3. Для больших n оно, например, ≤5/6. Получаем геометрическую оценку хвоста.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-11.html"><span aria-hidden="true">←</span> Вопрос 11</a><a href="topic-13.html">Вопрос 13 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

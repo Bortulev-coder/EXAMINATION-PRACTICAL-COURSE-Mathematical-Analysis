@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="монотонная сходимость, супремум">
+  <meta name="theme-color" content="#fff">
+  <title>Теорема Вейерштрасса для последовательностей · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="11">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=sequences#program">Последовательности</a></nav>
+      <p class="kicker dot">Вопрос 11 из 42</p>
+      <div class="lesson-title"><h1>Теорема Вейерштрасса для последовательностей<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">aₙ</span></div>
+      <p class="lesson-keywords">монотонная сходимость, супремум</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Формулировка</h2>
+  <p>Неубывающая и ограниченная сверху последовательность сходится к sup{xₙ}. Невозрастающая и ограниченная снизу сходится к inf{xₙ}. Если неубывающая последовательность не ограничена сверху, то она стремится к +∞, и двойственно для −∞.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательство</h2>
+  <p>Пусть s=sup{xₙ}. Для любого ε&gt;0 найдётся N с x_N&gt;s−ε. При n≥N монотонность даёт s−ε&lt;x_N≤xₙ≤s. Для убывания применим этот результат к −xₙ. В неограниченном случае для любого M выбираем N с x_N&gt;M, а затем xₙ≥x_N при n≥N.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Монотонность удерживает каждое новое приближение: как только последовательность подошла к своему потолку на расстояние ε, она уже не отступит.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Предел итераций</h2>
+  <p>x₁=3, xₙ₊₁=(xₙ+2/xₙ)/2. При x≥√2 разность F(x)−√2=(x−√2)²/(2x)≥0, а F(x)−x=(2−x²)/(2x)≤0. Последовательность убывает и ограничена снизу √2. Из L=(L+2/L)/2 и L&gt;0 имеем L=√2.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Вложить рекурсию в нужный промежуток</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Для x₁=1, xₙ₊₁=√(6+xₙ) докажи, что xₙ≤3 и последовательность возрастает.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Отрезок [1,3] инвариантен, поскольку √(6+x)∈[√7,3]. Функция возрастает и x₂&gt;x₁, значит неравенство переносится на все шаги.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди предел и исключи второй корень.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Сходимость следует из теоремы. Возводим L=√(6+L) в квадрат, получаем L=3 или −2. Условие L∈[1,3] оставляет 3.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Монотонность частичных сумм</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Докажи существование предела ∑<sub>k=1</sub>ⁿ 1/[k(k+1)] оценкой сверху.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Суммы растут. Каждое слагаемое равно 1/k−1/(k+1), поэтому сумма ≤1 после сокращения.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди точное значение и погрешность на n-м шаге.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Сумма равна 1−1/(n+1), предел 1, разность с пределом 1/(n+1).</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-10.html"><span aria-hidden="true">←</span> Вопрос 10</a><a href="topic-12.html">Вопрос 12 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

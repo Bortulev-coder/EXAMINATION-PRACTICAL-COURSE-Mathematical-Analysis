@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Больцано–Коши, частичные пределы, колебание">
+  <meta name="theme-color" content="#fff">
+  <title>Подпоследовательности, liminf и limsup · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="15">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=sequences#program">Последовательности</a></nav>
+      <p class="kicker dot">Вопрос 15 из 42</p>
+      <div class="lesson-title"><h1>Подпоследовательности, liminf и limsup<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">aₙ</span></div>
+      <p class="lesson-keywords">Больцано–Коши, частичные пределы, колебание</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения и теорема</h2>
+  <p>Подпоследовательность xₙₖ выбирает строго возрастающие индексы nₖ. Её предел называют частичным пределом. Всякая ограниченная последовательность имеет сходящуюся подпоследовательность (теорема Больцано–Коши, также Больцано–Вейерштрасса).</p>
+<p>Для ограниченной последовательности liminf xₙ=lim inf<sub>k≥n</sub>xₖ и limsup xₙ=lim sup<sub>k≥n</sub>xₖ. Это наименьший и наибольший частичные пределы. Для произвольной последовательности определения продолжаются в расширенную прямую [−∞,+∞]. Конечный предел существует тогда и только тогда, когда обе грани совпадают и конечны.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательства</h2>
+  <p>Делим отрезок, содержащий все члены, пополам. Хотя бы одна половина содержит бесконечно много членов по индексам. Повторяем внутри неё и выбираем индексы по возрастанию. Отрезки сжимаются к общей точке, к ней сходится и выбранная подпоследовательность.</p>
+<p>Для Bₙ=sup<sub>j≥n</sub>xⱼ берём n больше предыдущего выбранного индекса и выбираем j≥n с Bₙ−1/k&lt;xⱼ≤Bₙ на k-м шаге. Эти члены сходятся к lim Bₙ. Аналогично строится подпоследовательность к liminf. Все конечные частичные пределы лежат между хвостовыми гранями, поскольку индексы уходят в бесконечность. Если грани совпали, применяем сжатие.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>limsup и liminf — верхний и нижний края долгосрочных колебаний. Удаляй начало и смотри, к каким высотам подходят края оставшегося хвоста.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Разделение по чётности</h2>
+  <p>xₙ=(−1)ⁿ+1/n. Чётные члены стремятся к 1, нечётные к −1. Любая сходящаяся подпоследовательность содержит бесконечно много индексов хотя бы одной чётности и наследует её предел. Значит частичных пределов ровно два.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Остатки по модулю</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди частичные пределы sin(πn/2)+1/n.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>По остаткам 0,1,2,3 получаются пределы 0,1,0,−1. Каждая бесконечная подпоследовательность содержит бесконечно много индексов одного остатка, поэтому иных пределов нет.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди границы колебаний и выведи отсутствие обычного предела.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>liminf=−1 и limsup=1. Разные крайние частичные пределы исключают сходимость.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Одна бесконечная грань</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Пусть x₂ₖ=k, x₂ₖ₋₁=1/k. Вычисли liminf и limsup.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Каждый хвост сверху не ограничен, так что limsup=+∞. Члены положительны, а нечётные стремятся к 0, поэтому inf каждого хвоста равен 0 и liminf=0.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Может ли подпоследовательность сходиться к 2?</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Нет. Если в ней бесконечно много чётных индексов, значения на них уходят к +∞. Если чётных конечное число, её хвост состоит из нечётных и стремится к 0.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-14.html"><span aria-hidden="true">←</span> Вопрос 14</a><a href="topic-16.html">Вопрос 16 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

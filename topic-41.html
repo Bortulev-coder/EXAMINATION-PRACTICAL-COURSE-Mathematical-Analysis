@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Лейбниц, остаток Пеано, остаток Лагранжа">
+  <meta name="theme-color" content="#fff">
+  <title>Производные высших порядков и формула Тейлора · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="41">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=derivatives#program">Дифференцирование</a></nav>
+      <p class="kicker dot">Вопрос 41 из 42</p>
+      <div class="lesson-title"><h1>Производные высших порядков и формула Тейлора<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">f′</span></div>
+      <p class="lesson-keywords">Лейбниц, остаток Пеано, остаток Лагранжа</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Формулировки</h2>
+  <p>f⁽ⁿ⁾ получают n-кратным дифференцированием, f⁽⁰⁾=f. Формула Лейбница: (fg)⁽ⁿ⁾=∑<sub>k=0</sub>ⁿ C(n,k)f⁽ᵏ⁾g⁽ⁿ⁻ᵏ⁾. Многочлен Тейлора в a равен Pₙ(a+h)=∑<sub>k=0</sub>ⁿ f⁽ᵏ⁾(a)hᵏ/k!. При наличии n-й производной в a и производных предыдущих порядков в окрестности остаток Пеано равен o(hⁿ). Если f⁽ⁿ⁾ непрерывна на отрезке от a до x, а f⁽ⁿ⁺¹⁾ существует внутри, остаток Лагранжа равен f⁽ⁿ⁺¹⁾(ξ)hⁿ⁺¹/(n+1)!, ξ между a и x. При |f⁽ⁿ⁺¹⁾|≤M ошибка ≤M|h|ⁿ⁺¹/(n+1)!.</p>
+<p>При a=0 получаем формулу Маклорена. Частые разложения: eˣ=1+x+x²/2+x³/6+o(x³), sin x=x−x³/6+o(x³), cos x=1−x²/2+x⁴/24+o(x⁴), ln(1+x)=x−x²/2+x³/3+o(x³). Коэффициенты вычисляются по значениям производных в нуле.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательства</h2>
+  <p>При индукции для Лейбница дифференцируется каждый множитель, а коэффициенты при одинаковых производных складываются по правилу Паскаля. Для Пеано положим R=f−Pₙ. Все R⁽ᵏ⁾(a)=0 при k≤n. Из определения производной R⁽ⁿ⁻¹⁾(a+h)=o(h). Если R⁽ᵏ⁺¹⁾(a+h)=o(hᵐ), по Лагранжу R⁽ᵏ⁾(a+h)=hR⁽ᵏ⁺¹⁾(ξ)=o(hᵐ⁺¹), поскольку |ξ−a|≤|h|. Повторяем до k=0.</p>
+<p>Для Лагранжа при x≠a берём F(t)=R(t)−R(x)((t−a)/(x−a))ⁿ⁺¹. F обнуляется в a и x, её первые n производных равны нулю в a. Применяем Ролля n+1 раз и получаем F⁽ⁿ⁺¹⁾(ξ)=0. Это и даёт остаток.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Тейлор подгоняет модель сразу по значению, наклону и последующим производным. Чем больше порядков совпадает, тем меньше остаток возле точки разложения.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Оценка погрешности sin</h2>
+  <p>Для |x|≤0.2 приближение sin x≈x−x³/6 имеет ошибку ≤|x|⁵/120, поскольку коэффициент при x⁴ нулевой, а модуль пятой производной cos не превосходит 1. При x=0.2 ошибка ≤2.67·10⁻⁶.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Раскрытие сокращения</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Разложи ln(1+x) до третьей степени с остатком Пеано.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>При x=0 значение 0, первые три производные равны 1,−1,2. Получаем x−x²/2+x³/3+o(x³).</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди lim<sub>x→0</sub>[ln(1+x)−ln(1−x)−2x]/x³.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Подставляем −x во второе разложение. Чётные члены сокращаются, линейный член убран, остаётся 2x³/3+o(x³). Ответ 2/3.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Производные без полного раскрытия</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди (x²eˣ)⁽ⁿ⁾(0) при n≥2 по Лейбницу.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>В нуле ненулевая только вторая производная x². Поэтому значение равно 2C(n,2)=n(n−1).</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Определи коэффициент при x⁷ и найди предел [x²eˣ−x²−x³]/x⁴.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Коэффициент равен 7·6/7!=1/120. Из разложения eˣ до второго порядка числитель равен x⁴/2+o(x⁴), предел 1/2.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-40.html"><span aria-hidden="true">←</span> Вопрос 40</a><a href="topic-42.html">Вопрос 42 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

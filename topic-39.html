@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="хорда, касательная, знак второй производной">
+  <meta name="theme-color" content="#fff">
+  <title>Выпуклость и точки перегиба · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="39">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=derivatives#program">Дифференцирование</a></nav>
+      <p class="kicker dot">Вопрос 39 из 42</p>
+      <div class="lesson-title"><h1>Выпуклость и точки перегиба<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">f′</span></div>
+      <p class="lesson-keywords">хорда, касательная, знак второй производной</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения и критерии</h2>
+  <p>Функция выпукла (выпукла вниз), если f((1−t)x+ty)≤(1−t)f(x)+tf(y) при t∈[0,1]. При обратном знаке функция вогнута (выпукла вверх). Для дифференцируемой f выпуклость равносильна неубыванию f′. Для дважды дифференцируемой — условию f″≥0 на интервале.</p>
+<p>Под точкой перегиба здесь понимаем внутреннюю точку непрерывности, при переходе через которую меняется направление выпуклости, с исключением линейных участков, скрывающих смену. Противоположные строгие знаки f″ по разные стороны достаточны. Если f″ существует в точке перегиба, то необходимо f″(c)=0; само равенство не достаточно. Более общий критерий смены выпуклости — неубывание f′ с одной стороны и невозрастание с другой (или наоборот), с настоящим изменением направления.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Почему работают критерии</h2>
+  <p>Неравенство хорды для x&lt;u&lt;y эквивалентно тому, что наклон секущей (x,u) не превышает наклон (u,y). Если f′ не убывает, это следует из Лагранжа на [x,u] и [u,y]. Обратно, свойства наклонов секущих и предельный переход у концов дают f′(x)≤[f(y)−f(x)]/(y−x)≤f′(y). По критерию монотонности для f′ это равносильно f″≥0.</p>
+<p>Если направления меняются и f″(c) существует, f′ непрерывна в c и на стыке у неё локальный экстремум. Применяя Ферма к f′, получаем f″(c)=0.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>У выпуклого графика наклон касательной растёт по мере движения вправо. Перегиб означает смену направления, в котором поворачиваются касательные.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Нуль второй производной может обмануть</h2>
+  <p>У f=x⁴ имеем f″=12x²≥0, в 0 нуль, но обе стороны выпуклы. У g=x³ имеем g″=6x, знак меняется, поэтому 0 является перегибом.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Выпуклость и критические точки</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди интервалы выпуклости для f(x)=x⁴−6x².</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>f″=12(x²−1). Функция выпукла на (−∞,−1) и (1,+∞), вогнута на (−1,1).</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди точки перегиба и сравни их с точками экстремума.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Перегибы (−1,−5) и (1,−5). Из f′=4x(x²−3) экстремумы в x=−√3,0,√3, то есть ни один перегиб не является экстремумом. Знаки f′ дают минимумы при ±√3 и максимум в 0.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Точка, где второй производной нет</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Для f(x)=x|x| найди f′(0) и f″ вне 0.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>f(h)/h=|h|→0. Слева f=−x² и f″=−2, справа f=x² и f″=2.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Докажи, что 0 — перегиб, и объясни применимость необходимого условия f″(0)=0.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Выпуклость по сторонам меняется. f′(h)=2|h|, поэтому f′(h)/h имеет пределы −2 и 2. Вторая производная в 0 отсутствует, условие о нулевом значении здесь неприменимо.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-38.html"><span aria-hidden="true">←</span> Вопрос 38</a><a href="topic-40.html">Вопрос 40 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

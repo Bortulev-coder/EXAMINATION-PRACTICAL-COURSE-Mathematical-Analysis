@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="порядок, зажатая функция, локальная оценка">
+  <meta name="theme-color" content="#fff">
+  <title>Неравенства и теорема о сжатой функции · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="17">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=limits#program">Пределы функций</a></nav>
+      <p class="kicker dot">Вопрос 17 из 42</p>
+      <div class="lesson-title"><h1>Неравенства и теорема о сжатой функции<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">lim</span></div>
+      <p class="lesson-keywords">порядок, зажатая функция, локальная оценка</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Формулировки</h2>
+  <p>Пусть f,g заданы на одной области около предельной точки a и f(x)≤g(x) в проколотой окрестности. Если конечные пределы существуют, то lim f≤lim g. При u(x)≤f(x)≤v(x) и lim u=lim v=L получаем lim f=L. Достаточно также |f−L|≤h, где h→0 и h≥0.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательство</h2>
+  <p>Если lim f=A&gt;lim g=B, возьмём ε=(A−B)/3. В общей малой окрестности f(x)&gt;A−ε&gt;B+ε&gt;g(x), противоречие. В теореме о сжатии выбираем минимум из δ для u и v и получаем L−ε&lt;u≤f≤v&lt;L+ε. Из строгого неравенства между функциями следует лишь нестрогое неравенство между пределами.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Уменьши ширину коридора вокруг графика. Если обе стенки приходят в одну точку, график внутри не сможет уйти к другому значению.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Осцилляция с затухающей амплитудой</h2>
+  <p>При x≠0 имеем −x²≤x²cos(1/x)≤x². Обе границы стремятся к 0, поэтому колебания cos(1/x) не мешают существованию предела произведения.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Ограниченная дробь</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Оцени |sin(3/x)/(2+cos(1/x))| при x≠0.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Модуль числителя ≤1, знаменатель лежит в [1,3], значит дробь ограничена по модулю единицей.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди lim<sub>x→0</sub> x·sin(3/x)/(2+cos(1/x)).</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Модуль выражения ≤|x|→0. По сжатию предел 0.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Оценка информативнее предела</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Пусть |f(x)−2|≤3x². Найди предел f при x→0.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Из сжатия следует lim f=2.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Докажи lim<sub>x→0</sub>(f(x)−2)/x=0. Обязательно ли существует предел (f(x)−2)/x²?</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Для первой дроби модуль ≤3|x|. Для второй возможна f(x)=2+x²sin(1/x), которая удовлетворяет оценке, но дробь имеет подпоследовательности с пределами ±1.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-16.html"><span aria-hidden="true">←</span> Вопрос 16</a><a href="topic-18.html">Вопрос 18 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

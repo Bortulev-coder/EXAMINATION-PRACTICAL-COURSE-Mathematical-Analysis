@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="предел частного, подстановка, обратное отображение">
+  <meta name="theme-color" content="#fff">
+  <title>Арифметика пределов, композиция и обратная функция · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="18">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=limits#program">Пределы функций</a></nav>
+      <p class="kicker dot">Вопрос 18 из 42</p>
+      <div class="lesson-title"><h1>Арифметика пределов, композиция и обратная функция<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">lim</span></div>
+      <p class="lesson-keywords">предел частного, подстановка, обратное отображение</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Условия применения</h2>
+  <p>Если f→A, g→B в одной точке, конечны пределы суммы A+B и произведения AB, а при B≠0 также частного A/B. Для композиции при g(x)→b и f(t)→L при t→b достаточно g(x)≠b в проколотой окрестности и принадлежности значений области f. Если f непрерывна в b, равенство g(x)=b допустимо.</p>
+<p>Для непрерывной строго монотонной f на интервале обратная функция непрерывна на интервале значений. При внутренних a и b=f(a) имеем lim<sub>y→b</sub>f⁻¹(y)=a. На принадлежащих области концах понимаем предел односторонне. Это отдельный факт от перехода к 1/f.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательства</h2>
+  <p>Арифметику переносим по Гейне из теоремы для последовательностей. Для композиции выбираем δ_f для ε, затем δ_g, чтобы |g(x)−b|&lt;δ_f. Если g(x)=b и f непрерывна, то f(b)=L.</p>
+<p>Для возрастающей f возьмём достаточно малое η≤ε с a±η в области. Из f(a−η)&lt;b&lt;f(a+η) выбираем δ как минимум расстояний до этих значений. Тогда |y−b|&lt;δ влечёт a−η&lt;f⁻¹(y)&lt;a+η. Убывающий случай зеркален, на концах нужна только одна граница.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>В композиции выход первого преобразования становится входом второго. Уточни, разрешён ли второй функции вход ровно в предельную точку.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Сбой подстановки</h2>
+  <p>Пусть f(0)=1, а f(t)=0 для t≠0. Внешний проколотый предел при t→0 равен 0, но с g(x)≡0 композиция f(g(x))≡1. Условие о проколотости существенно.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Композиция с попаданием в точку</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Проверь, что g(x)=x·sin(1/x)→0.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>|g(x)|≤|x|, поэтому действует сжатие.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди предел [√(4+g(x))−2]/g(x) на области g(x)≠0. Как заполнить пропуски?</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Сопряжённое выражение даёт 1/(√(4+g(x))+2)→1/4. На нулях g задаём 1/4, чтобы получить тот же предел на полной окрестности.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Обратная функция и её предел</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Обоснуй, что u(x)=x+x³ взаимно однозначно отображает ℝ на ℝ.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Если y&gt;x, то u(y)−u(x)=(y−x)(1+x²+xy+y²)&gt;0. Полином непрерывен и уходит к ±∞, поэтому по промежуточным значениям образ равен ℝ.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди lim<sub>t→2</sub>u⁻¹(t) и lim<sub>t→2</sub> 1/u⁻¹(t).</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>u(1)=2. Непрерывность обратной даёт предел 1, а правило обратной величины также даёт 1.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-17.html"><span aria-hidden="true">←</span> Вопрос 17</a><a href="topic-19.html">Вопрос 19 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

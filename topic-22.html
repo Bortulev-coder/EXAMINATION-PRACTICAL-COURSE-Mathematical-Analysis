@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="непрерывность в точке, изолированная точка">
+  <meta name="theme-color" content="#fff">
+  <title>Непрерывность и функция Дирихле · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="22">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=continuity#program">Непрерывность</a></nav>
+      <p class="kicker dot">Вопрос 22 из 42</p>
+      <div class="lesson-title"><h1>Непрерывность и функция Дирихле<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">ε</span></div>
+      <p class="lesson-keywords">непрерывность в точке, изолированная точка</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения</h2>
+  <p>f:D→ℝ непрерывна в a∈D, если для каждого ε&gt;0 есть δ&gt;0, для которого |x−a|&lt;δ, x∈D ⇒ |f(x)−f(a)|&lt;ε. В предельной точке D это равносильно lim<sub>x→a</sub>f(x)=f(a). В изолированной точке D условие выполняется автоматически. Последовательный критерий требует f(xₙ)→f(a) при любых xₙ∈D, xₙ→a.</p>
+<p>Сумма, произведение и композиция непрерывных функций непрерывны в соответствующих точках. Частное непрерывно там, где знаменатель не равен нулю. Это следует из арифметики и композиции пределов.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Почему функция Дирихле разрывна всюду</h2>
+  <p>Функция D(x)=1 для x∈ℚ и 0 иначе принимает оба значения в каждой окрестности. По плотности рациональных и иррациональных можно взять две последовательности, сходящиеся к любому a и отличные от a, на которых значения равны 1 и 0. По Гейне предел отсутствует в каждой точке.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Непрерывность означает, что входная погрешность может быть сделана настолько малой, чтобы выход остался в заданном допуске. У функции Дирихле любая окрестность содержит оба несовместимых выхода.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Ослабить колебания множителем</h2>
+  <p>f(x)=xD(x) непрерывна в 0, так как |f(x)|≤|x| и f(0)=0. При a≠0 по рациональным аргументам значения стремятся к a, а по иррациональным к 0. В остальных точках непрерывности нет.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Погасить осцилляцию в заданных точках</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Проверь непрерывность f(x)=(x²−1)D(x) в x=±1.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>|f(x)|≤|x²−1|→0, а f(±1)=0.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди все остальные точки непрерывности.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Других нет. При a≠±1 по рациональной последовательности предел равен a²−1, по иррациональной 0.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Относительная непрерывность</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> На D={0}∪{1/n : n≥1} положим f(0)=0 и f(1/n)=1. Где f непрерывна?</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Каждая 1/n изолирована в D, поэтому там f непрерывна. В 0 последовательность 1/n даёт значения 1, и непрерывности нет.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Как изменить только одно значение, чтобы f стала непрерывной на D?</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Положить f(0)=1. Функция станет постоянной, а прежний предел в нуле равен 1.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-21.html"><span aria-hidden="true">←</span> Вопрос 21</a><a href="topic-23.html">Вопрос 23 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

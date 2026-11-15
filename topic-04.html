@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Муавр, ветвь, экспонента, комплексные функции">
+  <meta name="theme-color" content="#fff">
+  <title>Степени, корни и комплексный логарифм · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="4">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=foundations#program">Основы анализа</a></nav>
+      <p class="kicker dot">Вопрос 04 из 42</p>
+      <div class="lesson-title"><h1>Степени, корни и комплексный логарифм<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">∈</span></div>
+      <p class="lesson-keywords">Муавр, ветвь, экспонента, комплексные функции</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения</h2>
+  <p>Для z=re<sup>iφ</sup>≠0 и целого n имеем zⁿ=rⁿe<sup>inφ</sup>. При n≥1 корни уравнения wⁿ=z имеют вид r<sup>1/n</sup>e<sup>i(φ+2πk)/n</sup>, k=0,…,n−1. У нуля один корень нуль. При z=x+iy определяем exp z=eˣ(cos y+i sin y).</p>
+<p>Комплексный логарифм Log z как многозначная операция даёт все ln|z|+i(arg z+2πk). На ℂ без неположительной вещественной полуоси можно выбрать непрерывную главную ветвь с аргументом в (−π,π). Степень zᵅ получают как exp(α Log z), с оговоркой о ветви. Функция комплексного аргумента задаёт единственное значение на своей области. Например cos z=(e<sup>iz</sup>+e<sup>−iz</sup>)/2 является однозначной функцией.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Вывод формул</h2>
+  <p>Из w=ρe<sup>iθ</sup> и wⁿ=z следуют отдельно ρⁿ=r и nθ=φ+2πk. Замена k на k+n даёт то же число, а остатки по модулю n дают разные углы. Уравнение e<sup>u+iv</sup>=z аналогично распадается на eᵘ=r и v=φ+2πk. Поэтому выбор значения логарифма меняет степень на множитель e<sup>2πiαk</sup>.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Аргумент похож на показание угломера после нескольких оборотов. Умножение на n склеивает разные исходные углы, поэтому при извлечении корня появляются n вариантов.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Логарифм и квадратный корень</h2>
+  <p>Для z=−4 все значения Log z равны ln 4+i(π+2πk). После деления пополам и возведения e в степень получаем 2e<sup>iπ/2</sup>e<sup>iπk</sup>=±2i. На главной ветви с разрезом значение Log(−4) не определено.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Корни на окружности</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди все решения w³=8i.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>w=2e<sup>i(π/6+2πk/3)</sup>, k=0,1,2. Аргументы отличаются на 2π/3.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди сумму и произведение этих корней.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Общий множитель 2e<sup>iπ/6</sup> выносится из суммы, после чего 1+ω+ω²=0 для ω=e<sup>2πi/3</sup>. Произведение равно 2³e<sup>i(π/2+2π)</sup>=8i.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Зависимость от ветви</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Реши eʷ=−i.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>w=i(−π/2+2πk), k∈ℤ. Вещественная часть равна ln 1=0.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди все значения (−i)<sup>2/3</sup>.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Берём exp(2w/3). Получаем углы −π/3+4πk/3. Достаточно k=0,1,2, поскольку остальные повторяются.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-03.html"><span aria-hidden="true">←</span> Вопрос 03</a><a href="topic-05.html">Вопрос 05 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

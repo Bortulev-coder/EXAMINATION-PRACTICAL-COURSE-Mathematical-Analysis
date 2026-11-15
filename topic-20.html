@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="знак, бесконечно большая, обратная величина">
+  <meta name="theme-color" content="#fff">
+  <title>Бесконечные пределы в точке · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="20">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=limits#program">Пределы функций</a></nav>
+      <p class="kicker dot">Вопрос 20 из 42</p>
+      <div class="lesson-title"><h1>Бесконечные пределы в точке<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">lim</span></div>
+      <p class="lesson-keywords">знак, бесконечно большая, обратная величина</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения и правила</h2>
+  <p>При x→a утверждение f→+∞ означает: для каждого M&gt;0 при достаточно малом 0&lt;|x−a| имеем f(x)&gt;M. Для −∞ требуется f(x)&lt;−M. При |f|→∞ знак может меняться, например у 1/x в нуле. Бесконечно малая функция стремится к 0. Если |f|→∞, то 1/f→0. Если f→0 и f&gt;0 в проколотой окрестности, то 1/f→+∞, при f&lt;0 получаем −∞.</p>
+<p>Умножение бесконечно малой на ограниченную даёт бесконечно малую. Если |f|→∞ и |g|≥c&gt;0, то |fg|→∞. Для знака произведения или частного нужно знать знаки множителей. Если g→0, g≠0, и f→A≠0, то |f/g|→∞. Если f ограничена и |g|→∞, то f/g→0.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Оценки, из которых следуют правила</h2>
+  <p>Бесконечно малую h и ограниченную g с |g|≤C оцениваем как |hg|≤C|h|. При |g|≥c имеем |fg|≥c|f|. Для f/g с f→A≠0 имеем |f|≥|A|/2, а при |g|&lt;|A|/(2M) итоговый модуль &gt;M. Обратная величина получается из условия |f|&gt;1/ε. Предел формы 0·∞ может оказаться 0, конечным ненулевым или бесконечным, что видно по произведениям x³·1/x², x²·1/x² и |x|·1/x² при x→0.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Граница M работает как планка. При стремлении к +∞ график должен в конце оказаться выше любой заранее выбранной планки.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Знак и явное δ</h2>
+  <p>Для f(x)=(2+x)/x² и 0&lt;|x|&lt;1 числитель &gt;1. Если δ=min(1,1/√M), то x²&lt;1/M и f(x)&gt;M. Значит lim<sub>x→0</sub>f(x)=+∞.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Двусторонняя и односторонняя картина</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди правый и левый пределы (1+x)/x около нуля.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Числитель положителен при |x|&lt;1/2. Модуль дроби стремится к ∞. Справа x&gt;0, предел +∞, слева x&lt;0, предел −∞.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Что меняется, если заменить знаменатель на x²?</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>x²&gt;0 по обе стороны, а числитель отделён от нуля. Поэтому двусторонний предел +∞.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Ограниченная возмущающая часть</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Докажи, что 1/x²+sin(1/x)→+∞.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Выражение ≥1/x²−1. Для любого M можно потребовать 1/x²&gt;M+1.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди предел x²[1/x²+sin(1/x)].</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>После раскрытия получаем 1+x²sin(1/x). Последняя часть по модулю ≤x² и стремится к 0. Ответ 1.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-19.html"><span aria-hidden="true">←</span> Вопрос 19</a><a href="topic-21.html">Вопрос 21 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

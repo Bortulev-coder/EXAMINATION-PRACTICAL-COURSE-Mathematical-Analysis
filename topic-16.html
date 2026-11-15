@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ε–δ, проколотая окрестность, равносильность">
+  <meta name="theme-color" content="#fff">
+  <title>Предел функции по Коши и Гейне · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="16">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=limits#program">Пределы функций</a></nav>
+      <p class="kicker dot">Вопрос 16 из 42</p>
+      <div class="lesson-title"><h1>Предел функции по Коши и Гейне<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">lim</span></div>
+      <p class="lesson-keywords">ε–δ, проколотая окрестность, равносильность</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Определения и условия</h2>
+  <p>Пусть a — предельная точка D⊂ℝ, функция f:D→ℝ. По Коши lim<sub>x→a</sub>f(x)=L, если для каждого ε&gt;0 есть δ&gt;0, такое что x∈D, 0&lt;|x−a|&lt;δ ⇒ |f(x)−L|&lt;ε. По Гейне требуется f(xₙ)→L для любой последовательности xₙ∈D∖{a}, xₙ→a. Значение f(a) может быть произвольным или отсутствовать.</p>
+<p>Единственность следует из несовместимости двух ε-окрестностей с непустой проколотой окрестностью a. Конечный предел даёт локальную ограниченность (берём ε=1). Если L&gt;0, то по ε=L/2 функция положительна в достаточно малой проколотой окрестности.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Равносильность</h2>
+  <p>Из определения Коши для заданного ε берём δ, а из xₙ→a получаем попадание в нужную окрестность при всех больших n. Обратно, отрицание критерия Коши даёт ε₀&gt;0, при котором для δ=1/n можно выбрать xₙ с 0&lt;|xₙ−a|&lt;1/n, но |f(xₙ)−L|≥ε₀. Это нарушает условие Гейне.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Коши требует дежурства сразу на всей окрестности. Гейне проверяет все возможные маршруты к точке, включая маршрут, составленный из нарушений.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Локальная оценка в ε–δ форме</h2>
+  <p>Для f(x)=x², a=2: |x²−4|=|x−2||x+2|. Если |x−2|&lt;1, то |x+2|&lt;5. Берём δ=min(1,ε/5) и получаем |f(x)−4|&lt;ε.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Явный выбор окрестности</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Докажи по Коши, что lim<sub>x→3</sub> 1/x=1/3.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>При |x−3|&lt;1 получаем x&gt;2. Тогда |1/x−1/3|=|x−3|/(3|x|)&lt;|x−3|/6. Подходит δ=min(1,6ε).</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Выведи по Гейне сходимость 1/(3+(−1)ⁿ/n).</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Аргументы всегда отличны от 3 и стремятся к 3. Поэтому значения стремятся к 1/3 по доказанной формуле.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Построение двух маршрутов</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди xₙ→0⁺, на которых sin(1/xₙ)=1.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Берём xₙ=1/(π/2+2πn).</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Найди маршрут со значениями −1 и сделай вывод.</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>yₙ=1/(3π/2+2πn)→0⁺, sin(1/yₙ)=−1. По Гейне правого предела нет.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-15.html"><span aria-hidden="true">←</span> Вопрос 15</a><a href="topic-17.html">Вопрос 17 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

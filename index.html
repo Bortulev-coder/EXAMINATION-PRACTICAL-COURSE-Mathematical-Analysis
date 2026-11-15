@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="42 вопроса по математическому анализу с доказательствами и задачами с решениями.">
+  <meta name="theme-color" content="#fff">
+  <title>Подготовка к экзамену · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html" aria-current="page">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="wrap hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="kicker dot">Экзамен · первый семестр 2025–2026</p>
+      <h1 id="hero-title">Математический <span class="blue">анализ<span class="title-star" aria-hidden="true">✳</span></span></h1>
+      <p class="hero-desc">Продвинутая подготовка к экзамену от Александра Бортулева.</p>
+      <p class="hero-meta">Теория <span>×</span> Доказательства <span>×</span> Задачи</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#program">Открыть программу <span aria-hidden="true">↓</span></a>
+        <a class="text-action" href="#practice">К задачам <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+    <figure class="hero-figure">
+      <div class="graph-card">
+        <div class="graph-head"><span class="kicker dot">Первый замечательный предел</span><span class="figure-no">ВОПРОС 23</span></div>
+        <div class="graph-equation" aria-label="Предел синуса икс, делённого на икс, при икс, стремящемся к нулю, равен единице">
+          <span class="math-limit">lim<small>x → 0</small></span>
+          <span class="fraction"><span>sin x</span><span>x</span></span><span>=</span><em>1</em>
+        </div>
+        <canvas id="hero-chart" role="img" aria-label="График sin x / x с выколотой точкой в (0, 1)" width="540" height="235"></canvas>
+        <a class="graphic-link" href="topic-23.html">К доказательству <span aria-hidden="true">↗</span></a>
+      </div>
+      <figcaption>Функция стремится к 1 с обеих сторон от нуля.</figcaption>
+    </figure>
+  </section>
+  <div class="strip"><div class="wrap strip-inner"><span><strong>42</strong> экзаменационных вопроса</span><span><strong>84</strong> задачи с решениями</span><span>Прогресс <strong id="progress-label">0 / 42</strong><progress id="progress" value="0" max="42" aria-label="Пройдено тем"></progress></span></div></div>
+  <section id="program" class="wrap program" aria-labelledby="program-title">
+    <div class="section-head">
+      <div><p class="kicker dot">Оглавление</p><h2 id="program-title">Программа<span class="blue">.</span></h2></div>
+      <label class="search"><span>Поиск по программе</span><input id="topic-search" type="search" placeholder="Например, 23 или Тейлор"></label>
+    </div>
+    <div class="filters" aria-label="Разделы программы"><button class="filter" type="button" data-group="" aria-pressed="true">Все темы</button><button class="filter" type="button" data-group="foundations" aria-pressed="false">Основы анализа</button><button class="filter" type="button" data-group="sequences" aria-pressed="false">Последовательности</button><button class="filter" type="button" data-group="limits" aria-pressed="false">Пределы функций</button><button class="filter" type="button" data-group="continuity" aria-pressed="false">Непрерывность</button><button class="filter" type="button" data-group="derivatives" aria-pressed="false">Дифференцирование</button></div>
+    <p class="result-count" id="result-count" aria-live="polite"></p>
+    <p id="no-results" class="no-results" hidden>Подходящих тем нет. Попробуй другой номер или термин.</p>
+    <div class="groups"><section class="topic-group" data-section="foundations" aria-labelledby="group-foundations">
+  <div class="group-head"><span class="group-icon" aria-hidden="true">∈</span>
+  <div><p class="kicker group-range">Вопросы 01–08</p><h3 id="group-foundations">Основы анализа</h3><p>Множества, комплексные и вещественные числа</p></div></div>
+  <ol start="1" class="topic-list"><li data-topic="1" class="topic-row">
+  <a href="topic-01.html"><span class="topic-no">01</span>
+    <span class="topic-label"><strong>Способы задания множеств</strong><small>множество, перечисление, характеристическое свойство, порождающая процедура</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="2" class="topic-row">
+  <a href="topic-02.html"><span class="topic-no">02</span>
+    <span class="topic-label"><strong>Отображения и прямые произведения</strong><small>инъекция, сюръекция, биекция</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="3" class="topic-row">
+  <a href="topic-03.html"><span class="topic-no">03</span>
+    <span class="topic-label"><strong>Комплексные числа и их формы</strong><small>модуль, аргумент, сопряжение, полярная форма</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="4" class="topic-row">
+  <a href="topic-04.html"><span class="topic-no">04</span>
+    <span class="topic-label"><strong>Степени, корни и комплексный логарифм</strong><small>Муавр, ветвь, экспонента, комплексные функции</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="5" class="topic-row">
+  <a href="topic-05.html"><span class="topic-no">05</span>
+    <span class="topic-label"><strong>Аксиомы вещественных чисел</strong><small>упорядоченное поле, полнота, треугольное неравенство</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="6" class="topic-row">
+  <a href="topic-06.html"><span class="topic-no">06</span>
+    <span class="topic-label"><strong>Точные грани и вложенные отрезки</strong><small>супремум, инфимум, максимум, минимум</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="7" class="topic-row">
+  <a href="topic-07.html"><span class="topic-no">07</span>
+    <span class="topic-label"><strong>Натуральные числа, индукция и принцип Архимеда</strong><small>наименьший элемент, индуктивное множество</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="8" class="topic-row">
+  <a href="topic-08.html"><span class="topic-no">08</span>
+    <span class="topic-label"><strong>Плотность рациональных и иррациональных чисел</strong><small>корень из двух, архимедовость</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li></ol>
+</section><section class="topic-group" data-section="sequences" aria-labelledby="group-sequences">
+  <div class="group-head"><span class="group-icon" aria-hidden="true">aₙ</span>
+  <div><p class="kicker group-range">Вопросы 09–15</p><h3 id="group-sequences">Последовательности</h3><p>От рекурсий до критерия Коши и частичных пределов</p></div></div>
+  <ol start="9" class="topic-list"><li data-topic="9" class="topic-row">
+  <a href="topic-09.html"><span class="topic-no">09</span>
+    <span class="topic-label"><strong>Последовательности и рекурсии</strong><small>монотонность, ограниченность, инвариантный промежуток</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="10" class="topic-row">
+  <a href="topic-10.html"><span class="topic-no">10</span>
+    <span class="topic-label"><strong>Предел последовательности и его свойства</strong><small>ε–N, арифметика, теорема о сжатой последовательности</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="11" class="topic-row">
+  <a href="topic-11.html"><span class="topic-no">11</span>
+    <span class="topic-label"><strong>Теорема Вейерштрасса для последовательностей</strong><small>монотонная сходимость, супремум</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="12" class="topic-row">
+  <a href="topic-12.html"><span class="topic-no">12</span>
+    <span class="topic-label"><strong>Геометрическая прогрессия и рост qⁿ</strong><small>Бернулли, геометрическая сумма, n/qⁿ</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="13" class="topic-row">
+  <a href="topic-13.html"><span class="topic-no">13</span>
+    <span class="topic-label"><strong>Число e и связанные последовательности</strong><small>Бернулли, монотонность, предел</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="14" class="topic-row">
+  <a href="topic-14.html"><span class="topic-no">14</span>
+    <span class="topic-label"><strong>Фундаментальные последовательности и критерий Коши</strong><small>ε–N, полнота, попарные расстояния</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="15" class="topic-row">
+  <a href="topic-15.html"><span class="topic-no">15</span>
+    <span class="topic-label"><strong>Подпоследовательности, liminf и limsup</strong><small>Больцано–Коши, частичные пределы, колебание</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li></ol>
+</section><section class="topic-group" data-section="limits" aria-labelledby="group-limits">
+  <div class="group-head"><span class="group-icon" aria-hidden="true">lim</span>
+  <div><p class="kicker group-range">Вопросы 16–21</p><h3 id="group-limits">Пределы функций</h3><p>Определения, неопределённости и асимптоты</p></div></div>
+  <ol start="16" class="topic-list"><li data-topic="16" class="topic-row">
+  <a href="topic-16.html"><span class="topic-no">16</span>
+    <span class="topic-label"><strong>Предел функции по Коши и Гейне</strong><small>ε–δ, проколотая окрестность, равносильность</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="17" class="topic-row">
+  <a href="topic-17.html"><span class="topic-no">17</span>
+    <span class="topic-label"><strong>Неравенства и теорема о сжатой функции</strong><small>порядок, зажатая функция, локальная оценка</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="18" class="topic-row">
+  <a href="topic-18.html"><span class="topic-no">18</span>
+    <span class="topic-label"><strong>Арифметика пределов, композиция и обратная функция</strong><small>предел частного, подстановка, обратное отображение</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="19" class="topic-row">
+  <a href="topic-19.html"><span class="topic-no">19</span>
+    <span class="topic-label"><strong>Неопределённости и вычисление пределов</strong><small>0/0, ∞/∞, ∞−∞, степенные формы</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="20" class="topic-row">
+  <a href="topic-20.html"><span class="topic-no">20</span>
+    <span class="topic-label"><strong>Бесконечные пределы в точке</strong><small>знак, бесконечно большая, обратная величина</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="21" class="topic-row">
+  <a href="topic-21.html"><span class="topic-no">21</span>
+    <span class="topic-label"><strong>Пределы на бесконечности и асимптоты</strong><small>горизонтальная, наклонная, вертикальная</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li></ol>
+</section><section class="topic-group" data-section="continuity" aria-labelledby="group-continuity">
+  <div class="group-head"><span class="group-icon" aria-hidden="true">ε</span>
+  <div><p class="kicker group-range">Вопросы 22–31</p><h3 id="group-continuity">Непрерывность</h3><p>Разрывы, замечательные пределы и предел по базе</p></div></div>
+  <ol start="22" class="topic-list"><li data-topic="22" class="topic-row">
+  <a href="topic-22.html"><span class="topic-no">22</span>
+    <span class="topic-label"><strong>Непрерывность и функция Дирихле</strong><small>непрерывность в точке, изолированная точка</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="23" class="topic-row">
+  <a href="topic-23.html"><span class="topic-no">23</span>
+    <span class="topic-label"><strong>Эквивалентности и замечательные пределы</strong><small>sin x / x, второй замечательный предел, таблица</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="24" class="topic-row">
+  <a href="topic-24.html"><span class="topic-no">24</span>
+    <span class="topic-label"><strong>Односторонние пределы и разрывы</strong><small>устранимый, скачок, разрыв второго рода</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="25" class="topic-row">
+  <a href="topic-25.html"><span class="topic-no">25</span>
+    <span class="topic-label"><strong>Графики элементарных функций и построение эскизов</strong><small>парабола, гипербола, экспонента, логарифм</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="26" class="topic-row">
+  <a href="topic-26.html"><span class="topic-no">26</span>
+    <span class="topic-label"><strong>Функция Римана</strong><small>функция Томаэ, плотность, знаменатели</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="27" class="topic-row">
+  <a href="topic-27.html"><span class="topic-no">27</span>
+    <span class="topic-label"><strong>Непрерывные функции на отрезке</strong><small>Вейерштрасс, ограниченность, экстремумы, Больцано</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="28" class="topic-row">
+  <a href="topic-28.html"><span class="topic-no">28</span>
+    <span class="topic-label"><strong>База и предел по базе</strong><small>хвосты, проколотая окрестность, односторонние базы</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="29" class="topic-row">
+  <a href="topic-29.html"><span class="topic-no">29</span>
+    <span class="topic-label"><strong>Экспонента и второй замечательный предел</strong><small>eˣ, построение, предел x/eˣ</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="30" class="topic-row">
+  <a href="topic-30.html"><span class="topic-no">30</span>
+    <span class="topic-label"><strong>Равномерная непрерывность и теорема Кантора</strong><small>единое δ, компактность, контрпример</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="31" class="topic-row">
+  <a href="topic-31.html"><span class="topic-no">31</span>
+    <span class="topic-label"><strong>Бесконечно малые и O-символика</strong><small>малое o, большое O, главный член</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li></ol>
+</section><section class="topic-group" data-section="derivatives" aria-labelledby="group-derivatives">
+  <div class="group-head"><span class="group-icon" aria-hidden="true">f′</span>
+  <div><p class="kicker group-range">Вопросы 32–42</p><h3 id="group-derivatives">Дифференцирование</h3><p>Производная, выпуклость, Лопиталь и Тейлор</p></div></div>
+  <ol start="32" class="topic-list"><li data-topic="32" class="topic-row">
+  <a href="topic-32.html"><span class="topic-no">32</span>
+    <span class="topic-label"><strong>Производная и дифференцируемость</strong><small>разностное отношение, приращение, непрерывность</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="33" class="topic-row">
+  <a href="topic-33.html"><span class="topic-no">33</span>
+    <span class="topic-label"><strong>Производные элементарных функций</strong><small>таблица производных, область определения</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="34" class="topic-row">
+  <a href="topic-34.html"><span class="topic-no">34</span>
+    <span class="topic-label"><strong>Правила дифференцирования</strong><small>произведение, частное, цепное правило, обратная функция</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="35" class="topic-row">
+  <a href="topic-35.html"><span class="topic-no">35</span>
+    <span class="topic-label"><strong>Дифференциал и инвариантность его формы</strong><small>линейная часть, погрешность, замена переменной</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="36" class="topic-row">
+  <a href="topic-36.html"><span class="topic-no">36</span>
+    <span class="topic-label"><strong>Касательная и угол между графиками</strong><small>секущая, наклон, вертикальная касательная</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="37" class="topic-row">
+  <a href="topic-37.html"><span class="topic-no">37</span>
+    <span class="topic-label"><strong>Теоремы Ферма, Ролля, Лагранжа и Коши</strong><small>среднее значение, необходимое условие экстремума</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="38" class="topic-row">
+  <a href="topic-38.html"><span class="topic-no">38</span>
+    <span class="topic-label"><strong>Монотонность и достаточные условия экстремума</strong><small>знак производной, критические точки</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="39" class="topic-row">
+  <a href="topic-39.html"><span class="topic-no">39</span>
+    <span class="topic-label"><strong>Выпуклость и точки перегиба</strong><small>хорда, касательная, знак второй производной</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="40" class="topic-row">
+  <a href="topic-40.html"><span class="topic-no">40</span>
+    <span class="topic-label"><strong>Правило Лопиталя</strong><small>0/0, ∞/∞, отношение производных, теорема Коши</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="41" class="topic-row">
+  <a href="topic-41.html"><span class="topic-no">41</span>
+    <span class="topic-label"><strong>Производные высших порядков и формула Тейлора</strong><small>Лейбниц, остаток Пеано, остаток Лагранжа</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li><li data-topic="42" class="topic-row">
+  <a href="topic-42.html"><span class="topic-no">42</span>
+    <span class="topic-label"><strong>Неявные и параметрические функции</strong><small>F(x,y)=0, производная по параметру, вертикальная касательная</small></span>
+    <span class="read-status" aria-hidden="true"></span><span class="row-arrow" aria-hidden="true">↗</span>
+  </a>
+</li></ol>
+</section></div>
+  </section>
+  <section class="practice-band" id="practice"><div class="wrap practice-inner">
+    <div><p class="kicker dot">Самопроверка</p><h2>Начни с задачи<span class="blue">.</span></h2><p>В каждом вопросе есть разобранный пример и две задачи. Открывай решение текущего подпункта, затем переноси приём на следующий.</p></div>
+    <div class="practice-links">
+      <a href="topic-10.html#tasks"><span>10</span> Предел последовательности <b aria-hidden="true">↗</b></a>
+      <a href="topic-23.html#tasks"><span>23</span> Замечательные пределы <b aria-hidden="true">↗</b></a>
+      <a href="topic-41.html#tasks"><span>41</span> Формула Тейлора <b aria-hidden="true">↗</b></a>
+    </div>
+  </div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>

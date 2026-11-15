@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="корень из двух, архимедовость">
+  <meta name="theme-color" content="#fff">
+  <title>Плотность рациональных и иррациональных чисел · Матанализ</title>
+  <link rel="icon" href="icon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="app.js"></script>
+</head>
+<body id="top">
+<a href="#main" class="skip">К содержимому</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Александр Бортулев · главная">
+      <span class="brand-mark" aria-hidden="true">аб<span>✳</span></span>
+      <span class="brand-label">Александр<br>Бортулев</span>
+    </a>
+    <nav aria-label="Основное меню">
+      <a href="index.html">Главная</a>
+      <a href="index.html#program">Программа</a>
+      <a href="index.html#practice">Практика</a>
+    </nav>
+    <a class="portfolio-link" href="https://bortulev-coder.github.io/Portfolio/index.html">Портфолио <span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+
+<main id="main" data-lesson="8">
+  <div class="lesson-top">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Путь к теме"><a href="index.html#program">Программа</a><span aria-hidden="true">/</span><a href="index.html?group=foundations#program">Основы анализа</a></nav>
+      <p class="kicker dot">Вопрос 08 из 42</p>
+      <div class="lesson-title"><h1>Плотность рациональных и иррациональных чисел<span class="blue">.</span></h1><span class="lesson-symbol" aria-hidden="true">∈</span></div>
+      <p class="lesson-keywords">корень из двух, архимедовость</p>
+    </div>
+  </div>
+  <div class="wrap lesson-grid">
+    <aside class="lesson-sidebar"><nav aria-label="В этом вопросе">
+      <p class="kicker">В этом вопросе</p>
+      <a href="#theory">Теория</a><a href="#proof">Доказательства</a><a href="#intuition">Интуиция</a><a href="#example">Разобранный пример</a><a href="#tasks">Задачи</a>
+      <button class="button mark-read" type="button" aria-pressed="false" hidden>Отметить как пройденный</button>
+    </nav></aside>
+    <article class="lesson-content">
+      <section class="lesson-section theory" id="theory">
+  <p class="kicker">Теория</p><h2>Что означает плотность</h2>
+  <p>D⊂ℝ плотно, если для всех a&lt;b интервал (a,b) пересекается с D. Подряд идущих вещественных или рациональных чисел нет. Более того, в каждом интервале бесконечно много рациональных и иррациональных чисел.</p>
+
+</section><section class="lesson-section proof" id="proof">
+  <p class="kicker">Доказательства</p><h2>Доказательства</h2>
+  <p>Для a&lt;b по Архимеду выбираем n с n(b−a)&gt;1. Берём m=⌊na⌋+1, тогда na&lt;m≤na+1&lt;nb. Следовательно a&lt;m/n&lt;b. Целая часть существует: целые, превосходящие заданное число, непусты и ограничены снизу, после целого сдвига к ним применимо свойство наименьшего натурального.</p>
+<p>Если √2=p/q в несократимом виде, p²=2q². Тогда p чётно и после подстановки p=2k получаем q²=2k², то есть q тоже чётно. Противоречие. Беря рациональное r∈(a−√2,b−√2), получаем иррациональное r+√2∈(a,b). Бесконечность следует применением плотности к любому меньшему интервалу, свободному от конечного набора точек.</p>
+
+</section><section class="lesson-section intuition" id="intuition">
+  <p class="kicker">Интуиция</p><h2>Образ для запоминания</h2>
+  <p>Рациональные с фиксированным знаменателем лежат на равномерной сетке. Увеличение знаменателя делает шаг мельче любой заданной ширины промежутка.</p>
+
+</section><section class="lesson-section example" id="example">
+  <p class="kicker">Разобранный пример</p><h2>Разбор. Найти рациональное и иррациональное в узком интервале</h2>
+  <p>В (1.41,1.42) лежит 1415/1000. Там же лежит √2, поскольку 1.41²=1.9881&lt;2&lt;2.0164=1.42², а квадрат возрастает на положительных числах.</p>
+
+</section>
+      <section class="lesson-section" id="tasks"><p class="kicker">Практика</p><h2>Задачи для самопроверки</h2>
+      <section class="task"><h3><span>01</span> Построение и перенос метода</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Найди дробь со знаменателем 27 строго между 4/7 и 2/3.</p>
+  <details class="solution" id="answer-1-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Умножаем границы на 27: 108/7&lt;16&lt;18. Подходит 16/27.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Построй иррациональное число в том же интервале с помощью найденной дроби.</p>
+  <details class="solution" id="answer-1-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Например 16/27+√2/100. Оно больше 4/7, а прибавка &lt;1/50&lt;2/27 — расстояния до 2/3. Сумма рационального и ненулевого рационального кратного √2 иррациональна.</p></div>
+  </details>
+</li></ol>
+</section><section class="task"><h3><span>02</span> Чётность и несократимость</h3>
+  <ol class="task-parts"><li class="task-part">
+  <p><span class="task-letter">а)</span> Докажи, что √6 иррационально.</p>
+  <details class="solution" id="answer-2-а">
+    <summary><span class="show">Показать решение пункта а</span><span class="hide">Скрыть решение пункта а</span></summary>
+    <div class="answer"><p>Из p²=6q² следует чётность p. Если p=2k, получаем 2k²=3q², откуда q чётно. Это несовместимо с несократимостью.</p></div>
+  </details>
+</li><li class="task-part">
+  <p><span class="task-letter">б)</span> Используй √6 для построения бесконечного числа различных иррациональных точек в (0,1).</p>
+  <details class="solution" id="answer-2-б">
+    <summary><span class="show">Показать решение пункта б</span><span class="hide">Скрыть решение пункта б</span></summary>
+    <div class="answer"><p>Для n≥3 все числа √6/n различны, положительны и меньше 1. Если одно рационально, умножением на n получаем рациональность √6.</p></div>
+  </details>
+</li></ol>
+</section></section>
+      <nav class="lesson-pagination" aria-label="Соседние темы"><a href="topic-07.html"><span aria-hidden="true">←</span> Вопрос 07</a><a href="topic-09.html">Вопрос 09 <span aria-hidden="true">→</span></a></nav>
+    </article>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="index.html"><span aria-hidden="true">✳</span> Александр Бортулев</a>
+    <p>Математический анализ · первый семестр 2025–2026</p>
+    <a href="#top">Наверх <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>
+</body>
+</html>
