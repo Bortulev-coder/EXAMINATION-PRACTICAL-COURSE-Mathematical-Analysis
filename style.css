@@ -201,3 +201,24 @@ sup, sub { line-height: 0; }
   .portfolio-link { font-size: .66rem; padding-inline: .4rem; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+
+/* Mathematical typography, including content in closed solutions. */
+.math-inline .katex { font-size: 1.06em; }
+.math-inline { line-height: 1.9; }
+.math-display { display: block; max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: .65rem .2rem; margin: .45rem 0; }
+.math-display .katex-display { margin: 0; text-align: left; }
+.math-display .katex-display > .katex { text-align: left; font-size: 1.08em; }
+.lesson-section p:not(.kicker) { line-height: 1.9; }
+.graph-equation .katex { font-size: .9em; }
+.topic-label .math-inline, .lesson-keywords .math-inline { line-height: 1.6; }
+.katex .base { white-space: nowrap; }
+@media (max-width: 760px) {
+  .math-display { padding-block: .75rem; }
+  .math-display .katex-display > .katex { font-size: 1em; }
+}
+.math-inline { display: inline-block; max-width: 100%; overflow-x: auto; overflow-y: hidden; vertical-align: middle; padding-block: .13rem; line-height: 1.6; }
+.math-display .katex-display { display: inline-block; vertical-align: middle; }
+.math-punctuation { margin-left: .12em; }
+.lesson-content, .lesson-sidebar { min-width: 0; }
+.lesson-title h1 { min-width: 0; overflow-wrap: anywhere; }
